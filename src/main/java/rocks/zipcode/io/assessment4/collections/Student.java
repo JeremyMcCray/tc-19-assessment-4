@@ -47,4 +47,14 @@ public class Student {
     public LabStatus getLabStatus(String labName) {
         return getLab(labName).labStatus;
     }
+
+
+    @Override
+    public String toString() {
+        String ans = "";
+        for (Lab elem: labs) {
+            ans += elem.labName + " > " + elem.labStatus + "\n";
+        }
+        return ans;
+    }
 }

@@ -23,7 +23,7 @@ public class VowelUtils {
 
 
     public static Boolean startsWithVowel(String word) {
-        Pattern pattern = Pattern.compile("[aeiou]");
+        Pattern pattern = Pattern.compile("[aeiouAEIOU]");
         Matcher matcher = pattern.matcher(word);
         if(matcher.find()){
             return matcher.start() == 0;
