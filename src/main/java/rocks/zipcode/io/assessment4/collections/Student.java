@@ -52,9 +52,12 @@ public class Student {
     @Override
     public String toString() {
         String ans = "";
-        for (Lab elem: labs) {
-            ans += elem.labName + " > " + elem.labStatus + "\n";
+        for (int i = labs.size()-1; i >= 0 ; i--) {
+            ans += labs.get(i).labName + " > " + labs.get(i).labStatus;
+            if(i > 0)ans +=  "\n";
         }
         return ans;
-    }
+        }
+
 }
+

@@ -8,8 +8,17 @@ import java.util.Arrays;
  */
 public class StringUtils {
     public static String capitalizeNthCharacter(String str, Integer indexToCapitalize) {
-        Character upper = Character.toUpperCase(str.charAt(indexToCapitalize));
-        return str.replace(str.charAt(indexToCapitalize), upper);
+        String ans = "";
+        ans+= str.substring(0,indexToCapitalize);
+        ans+= Character.toUpperCase(str.charAt(indexToCapitalize));
+        ans+= str.substring(indexToCapitalize+1);
+
+
+        return ans;
+
+        //sadly this doesnt work for words with identical characters, it uppercase's them all... thought I was cure not gonna lie.
+//        Character upper = Character.toUpperCase(str.charAt(indexToCapitalize));
+//        return str.replace(str.charAt(indexToCapitalize), upper);
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {

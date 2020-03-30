@@ -1,8 +1,7 @@
 package rocks.zipcode.io.assessment4.generics;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.net.Proxy;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -70,8 +69,22 @@ public class ArrayUtility<SomeType> {
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
 
+        int counter = 0;
 
-//        return Arrays.stream(array).filter(SomeType -> predicate.equals());
-        return null;
+
+        for (SomeType element: array) {
+            if(predicate.apply(element)){
+                counter++;
+            }
+        }
+       SomeType[] ans = Arrays.copyOf(this.array, counter );
+        counter = 0;
+        for (SomeType element: array) {
+            if(predicate.apply(element)){
+                ans[counter] = element;
+                counter++;
+            }
+        }
+        return ans;
     }
 }
